@@ -47,10 +47,7 @@ return packer.startup(function(use)
 	use "EdenEast/nightfox.nvim"
 
 	-- Treesitter
-	use {
-			'nvim-treesitter/nvim-treesitter',
-			run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-	}
+	use "nvim-treesitter/nvim-treesitter"
 
 	-- Autocomplete
 	use "hrsh7th/nvim-cmp"
@@ -58,11 +55,11 @@ return packer.startup(function(use)
 	use "hrsh7th/cmp-nvim-lsp"
 
 	-- Mason for external tools (LSP, linter, formatter, etc.)
-use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-}
+	use {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
+	}
 
 
   -- Automatically set up your configuration after cloning packer.nvim
