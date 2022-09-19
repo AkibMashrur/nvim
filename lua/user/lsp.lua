@@ -93,8 +93,14 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+local cmp_nvim_lsp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not cmp_nvim_lsp_status_ok then
+	vim.notify("cmp_nvim_lsp not configured properly")
+	return
+end
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 local opts = {
 	on_attach = on_attach,
