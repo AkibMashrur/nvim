@@ -52,6 +52,11 @@ return packer.startup(function(use)
 			run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 	}
 
+	-- Autocomplete
+	use "hrsh7th/nvim-cmp"
+	use "hrsh7th/cmp-buffer"
+	use "hrsh7th/cmp-nvim-lsp"
+
 	-- Mason for external tools (LSP, linter, formatter, etc.)
 use {
     "williamboman/mason.nvim",

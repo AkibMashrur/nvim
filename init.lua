@@ -4,4 +4,4 @@ require("user.keymaps")
 require("user.colors")
 require("user.treesitters")
 require("user.lsp")
-
+require("user.cmp")
