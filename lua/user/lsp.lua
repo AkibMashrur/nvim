@@ -13,7 +13,7 @@ if not mason_lspconfig_status_ok then
 end
 
 mason_lspconfig.setup({
-	ensure_installed = { "sumneko_lua", "pyright" },
+	ensure_installed = { "sumneko_lua", "pyright", "clangd" },
 	automatic_installation = false,
 })
 
@@ -64,6 +64,7 @@ local servers = {
 			typeCheckingMode = "off",
 		}
 	},
+	clangd = {},
 	sumneko_lua =  {
 		settings = {
     Lua = {
